@@ -6,11 +6,13 @@ import org.apache.kafka.common.serialization.StringSerializer;
 import java.util.Properties;
 
 /*
-   
+
 */
 public class ProducerOne {
     public static void main(String[] args) {
 
+        // Creating properties
+        
         String bootstrapServers = "127.0.0.1:9092";
         Properties properties = new Properties();
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
