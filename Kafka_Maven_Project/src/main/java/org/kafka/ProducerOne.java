@@ -10,6 +10,9 @@ import java.util.Properties;
        Kafka cluster. The users can use the bootstrap servers only for making an initial connection only. This server
        is present in the host:port, host:port,... form.
 
+    2. key.serializer: It is a type of Serializer class of the key which is used to implement the 'org.apache.kafka.
+       common.serialization.Serializer' interface.
+
    
 */
 public class ProducerOne {
