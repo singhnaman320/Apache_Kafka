@@ -20,6 +20,7 @@ public class ProducerOne {
     public static void main(String[] args) {
 
         // Creating properties
+        // When we create the properties, it imports the 'java.util.Properties' to the code.
 
         String bootstrapServers = "127.0.0.1:9092";
         Properties properties = new Properties();
@@ -27,5 +28,7 @@ public class ProducerOne {
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
+        // Creating Producer
+        
     }
 }
