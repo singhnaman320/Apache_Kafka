@@ -13,7 +13,8 @@ import java.util.Properties;
     2. key.serializer: It is a type of Serializer class of the key which is used to implement the 'org.apache.kafka.
        common.serialization.Serializer' interface.
 
-   
+    3. value.serializer: It is a type of Serializer class which implements the 'org.apache.kafka.common.serialization.
+       Serializer' interface.
 */
 public class ProducerOne {
     public static void main(String[] args) {
