@@ -1,6 +1,6 @@
 package org.kafka;
 
-public class Main {
+public class ProducerOne {
     public static void main(String[] args) {
 
         System.out.println("Hello world!");
