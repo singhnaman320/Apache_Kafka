@@ -2,6 +2,7 @@ package org.kafka;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
+import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
@@ -44,8 +45,9 @@ public class ProducerOne {
            lie inside a producer record. Here, the producer specifies the topic name as well as the message which is to
            be delivered to Kafka.
          */
-        
+
         // A ProducerRecord can be created as:
 
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne", "Creating TopicOne");
     }
 }
