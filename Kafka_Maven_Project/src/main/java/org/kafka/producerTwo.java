@@ -13,7 +13,6 @@ public class producerTwo {
 
 
         // []=-=-= Creating properties =-=-=[]
-        // When we create the properties, it imports the 'java.util.Properties' to the code.
 
         String bootstrapServers = "127.0.0.1:9092";  // or localhost:9092
         Properties properties = new Properties();
@@ -23,33 +22,11 @@ public class producerTwo {
 
         // []=-=-= Creating Producer =-=-=[]
 
-        // To create a Kafka producer, we just need to create an object of KafkaProducer.
-        // The object of KafkaProducer can be created as:
-
         KafkaProducer<String, String> firstProducer = new KafkaProducer<>(properties);
-
-        // Here, 'firstProducer' is the name of the producer.
 
         // []=-=-= Creating the Producer Record =-=-=[]
 
-        /* In order to send the data to Kafka, the user need to create a ProducerRecord. It is because all the producers
-           lie inside a producer record. Here, the producer specifies the topic name as well as the message which is to
-           be delivered to Kafka.
-         */
-
-        // A ProducerRecord can be created as:
-
         ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","Created successfully");
-
-        // OR
-
-        //ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic:"TopicOne",key:"message",value:"Created successfully");
-        /* Note: Create this topic manually */
-
-        /*
-        Here, 'producerRecord' is the name chosen for creating the producer record, 'TopicOne' is the topic name, and
-        'Creating TopicOne' is the message. The user can choose accordingly.
-        */
 
         // []=-=-= Sending data with Kafka Producer Callbacks =-=-=[]
 
@@ -91,13 +68,6 @@ public class producerTwo {
 
         firstProducer.flush(); // Common in both sending methods
         firstProducer.close(); // Common in both sending methods
-
-        /*
-        The data produced by a producer is asynchronous. Therefore, two additional functions, i.e., flush() and close()
-        are required (as seen in the above snapshot). The flush() will force all the data to get produced and close()
-        stops the producer. If these functions are not executed, data will never be sent to the Kafka, and the consumer
-        will not be able to read it.
-        */
 
     }
 }
