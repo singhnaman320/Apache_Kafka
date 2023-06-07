@@ -12,7 +12,7 @@ public class ProducerTwo {
 
         // []=-=-= Creating properties =-=-=[]
 
-        String bootstrapServers = "127.0.0.1:9092";  // or localhost:9092
+        String bootstrapServers = "localhost:9092";  // or localhost:9092
         Properties properties = new Properties();
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
@@ -24,7 +24,7 @@ public class ProducerTwo {
 
         // []=-=-= Creating the Producer Record =-=-=[]
 
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","new data created");
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","data created");
 
         // []=-=-= Sending data with Kafka Producer Callbacks =-=-=[]
 
