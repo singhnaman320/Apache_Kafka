@@ -79,7 +79,7 @@ public class ProducerOne {
 
         1) Retriable exception: This exception says that the message may be sent.
 
-
+        2) Non-retriable exception: This exception throws the error that the message will never be sent.
         */
 
 
