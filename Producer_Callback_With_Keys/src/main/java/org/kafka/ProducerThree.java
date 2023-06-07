@@ -23,13 +23,15 @@ public class ProducerThree {
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
-        // []=-=-= Creating Producer =-=-=[]
 
-        KafkaProducer<String, String> firstProducer = new KafkaProducer<>(properties);
 
-        // []=-=-= Creating the Producer Record =-=-=[]
+        KafkaProducer<String, String> firstProducer = new KafkaProducer<>(properties); // []=-=-= Creating Producer =-=-=[]
 
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","data");
+
+
+        ProducerRecord<String, String> producerRecord =
+                new ProducerRecord<>("TopicOne","FirstKey","Data");  // []=-=-= Creating the Producer Record =-=-=[]
+
 
         // []=-=-= Sending data with Kafka Producer Callbacks =-=-=[]
 
