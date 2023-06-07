@@ -69,6 +69,27 @@ public class producerTwo {
         2) Non-retriable exception: This exception throws the error that the message will never be sent.
         */
 
+        firstProducer.send(producerRecord, new Callback() {
+            public void onCompletion(RecordMetadata recordMetadata, Exception exception) {
+
+                Logger logger = LoggerFactory.getLogger(ProducerOne.class);
+
+                if (exception == null){
+
+                    logger.info("Details are given as: \n" +
+                            "Topic: " + recordMetadata.topic() + "\n" +
+                            "Partition: " + recordMetadata.partition() + "\n" +
+                            "Offset: " + recordMetadata.offset() + "\n" +
+                            "Timestamp: " + recordMetadata.timestamp() +"\n");
+
+                }else{
+
+                    logger.error("Unable to produce the data, getting error: ",exception);
+                }
+            }
+        });
+
+
 
     }
 }
