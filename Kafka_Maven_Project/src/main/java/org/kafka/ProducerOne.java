@@ -91,9 +91,14 @@ public class ProducerOne {
 
                 if (exception == null){
 
-
+                    logger.info("Details are given as: \n" +
+                            "Topic: " + recordMetadata.topic() + "\n" +
+                            "Partition: " + recordMetadata.partition() + "\n" +
+                            "Offset: " + recordMetadata.offset() + "\n" +
+                            "Timestamp: " + recordMetadata.timestamp() +"\n");
 
                 }else{
+
 
                 }
             }
