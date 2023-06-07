@@ -77,6 +77,8 @@ public class ProducerOne {
 
         Exception: There are following exceptions which can be thrown while processing:
 
+        1) Retriable exception: This exception says that the message may be sent.
+
 
         */
 
