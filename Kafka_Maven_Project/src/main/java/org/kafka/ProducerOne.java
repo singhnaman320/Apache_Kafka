@@ -99,7 +99,7 @@ public class ProducerOne {
 
                 }else{
 
-
+                    logger.error("Unable to produce the data, getting error: ",exception);
                 }
             }
         });
