@@ -64,7 +64,20 @@ public class ProducerOne {
 
         firstProducer.send(producerRecord);
 
-        // []=-=-= Sending data =-=-=[]
+        // []=-=-= Sending data with Kafka Producer Callbacks =-=-=
+
+        /*
+        In order to understand more deeply, i.e., whether the data was correctly produced, where it was produced, about
+        its offset and partition value, etc. we will use callback functions.
+
+        The callback function used by the producer is the onCompletion(). Basically, this method requires two arguments:
+
+        Metadata of the Record: Metadata of the record means fetching the information regarding the partition and its
+        offsets. If it is not null, an error will be thrown.
+
+
+        */
+
 
         firstProducer.flush();
         firstProducer.close();
