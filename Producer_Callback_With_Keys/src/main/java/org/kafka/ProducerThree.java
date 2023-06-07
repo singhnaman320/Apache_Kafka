@@ -76,6 +76,8 @@ public class ProducerThree {
         signature', select it. This will add two exceptions to the main(), as shown. Also, it will import
         'java.util.concurrent.ExecutionException' to the code.
 
+        The message 'Produced Data' will always go to the specified partitions now.
+
         */
     }
 }
