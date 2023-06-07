@@ -55,6 +55,10 @@ public class ProducerOne {
         'Creating TopicOne' is the message. The user can choose accordingly.
         */
 
+        // =-=-= Sending data =-=-=
 
+        firstProducer.send(producerRecord);
+        firstProducer.flush();
+        firstProducer.close();
     }
 }
