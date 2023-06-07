@@ -75,6 +75,8 @@ public class ProducerOne {
         Metadata of the Record: Metadata of the record means fetching the information regarding the partition and its
         offsets. If it is not null, an error will be thrown.
 
+        Exception: There are following exceptions which can be thrown while processing:
+
 
         */
 
