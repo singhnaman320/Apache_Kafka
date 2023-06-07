@@ -72,6 +72,9 @@ public class ProducerThree {
         about the key. At the end, a get() function is used when the data is sent to the Kafka. This method sends the
         data synchronously and forcefully. The users can try their own ways to implement the keys.
 
+        Note: Using the get(), a red underline will appear. Press alt+enter, it will say to 'Add exceptions to method
+        signature', select it. This will add two exceptions to the main(), as shown. Also, it will import
+        'java.util.concurrent.ExecutionException' to the code.
 
         */
     }
