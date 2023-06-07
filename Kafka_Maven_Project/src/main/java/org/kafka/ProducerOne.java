@@ -50,6 +50,8 @@ public class ProducerOne {
 
         ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","message","Creating");
 
+        /* Note: Create this topic manually */
+
         /*
         Here, 'producerRecord' is the name chosen for creating the producer record, 'TopicOne' is the topic name, and
         'Creating TopicOne' is the message. The user can choose accordingly.
