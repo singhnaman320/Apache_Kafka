@@ -24,7 +24,7 @@ public class ProducerOne {
         // =-=-= Creating properties =-=-=
         // When we create the properties, it imports the 'java.util.Properties' to the code.
 
-        String bootstrapServers = "127.0.0.1:9092";
+        String bootstrapServers = "127.0.0.1:9092";  // or localhost:9092
         Properties properties = new Properties();
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
@@ -48,7 +48,7 @@ public class ProducerOne {
 
         // A ProducerRecord can be created as:
 
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne", "Creating TopicOne");
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","message","Creating");
 
         /*
         Here, 'producerRecord' is the name chosen for creating the producer record, 'TopicOne' is the topic name, and
