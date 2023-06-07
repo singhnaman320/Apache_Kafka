@@ -65,5 +65,14 @@ public class ProducerThree {
         firstProducer.flush(); // Common in both sending methods
         firstProducer.close(); // Common in both sending methods
 
+        /*
+
+        We have specified the topic name, its value, and the key. While creating the ProducerRecord, three of them are
+        passed as the parameters. If the exception 'exception' will be equal to null, the logger will fetch the information
+        about the key. At the end, a get() function is used when the data is sent to the Kafka. This method sends the
+        data synchronously and forcefully. The users can try their own ways to implement the keys.
+
+
+        */
     }
 }
