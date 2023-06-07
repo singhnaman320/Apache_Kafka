@@ -39,6 +39,18 @@ public class producerTwo {
 
         // A ProducerRecord can be created as:
 
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","Created successfully");
+
+        // OR
+
+        //ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic:"TopicOne",key:"message",value:"Created successfully");
+        /* Note: Create this topic manually */
+
+        /*
+        Here, 'producerRecord' is the name chosen for creating the producer record, 'TopicOne' is the topic name, and
+        'Creating TopicOne' is the message. The user can choose accordingly.
+        */
+
 
     }
 }
