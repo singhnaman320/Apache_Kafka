@@ -21,7 +21,7 @@ import java.util.Properties;
 public class ProducerOne {
     public static void main(String[] args) {
 
-        // =-=-= Creating properties =-=-=
+        // []=-=-= Creating properties =-=-=[]
         // When we create the properties, it imports the 'java.util.Properties' to the code.
 
         String bootstrapServers = "127.0.0.1:9092";  // or localhost:9092
@@ -30,7 +30,7 @@ public class ProducerOne {
         properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
         properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
-        // =-=-= Creating Producer =-=-=
+        // []=-=-= Creating Producer =-=-=[]
 
         // To create a Kafka producer, we just need to create an object of KafkaProducer.
         // The object of KafkaProducer can be created as:
@@ -39,7 +39,7 @@ public class ProducerOne {
 
         // Here, 'firstProducer' is the name of the producer.
 
-        // =-=-= Creating the Producer Record =-=-=
+        // []=-=-= Creating the Producer Record =-=-=[]
 
         /* In order to send the data to Kafka, the user need to create a ProducerRecord. It is because all the producers
            lie inside a producer record. Here, the producer specifies the topic name as well as the message which is to
@@ -55,7 +55,7 @@ public class ProducerOne {
         'Creating TopicOne' is the message. The user can choose accordingly.
         */
 
-        // =-=-= Sending data =-=-=
+        // []=-=-= Sending data =-=-=[]
 
         firstProducer.send(producerRecord);
         firstProducer.flush();
@@ -66,6 +66,6 @@ public class ProducerOne {
         are required (as seen in the above snapshot). The flush() will force all the data to get produced and close()
         stops the producer. If these functions are not executed, data will never be sent to the Kafka, and the consumer
         will not be able to read it.
-         */
+        */
     }
 }
