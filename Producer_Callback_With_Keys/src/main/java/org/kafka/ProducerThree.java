@@ -6,7 +6,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
-
+/*
+    []=-=-=-=- Producer with Keys =-=-=-=-[]
+    Keys become useful when a user wants to send the message to the same partition. In order to send the data, the user
+    need to specify a key. The key will uniquely identify the partition from the other partitions. The user needs to
+    send synchronous messages to the Kafka.
+*/
 public class ProducerThree {
     public static void main(String[] args) {
 
@@ -24,7 +29,7 @@ public class ProducerThree {
 
         // []=-=-= Creating the Producer Record =-=-=[]
 
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","data created");
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","data");
 
         // []=-=-= Sending data with Kafka Producer Callbacks =-=-=[]
 
