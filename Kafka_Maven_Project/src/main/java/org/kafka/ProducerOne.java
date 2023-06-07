@@ -60,5 +60,12 @@ public class ProducerOne {
         firstProducer.send(producerRecord);
         firstProducer.flush();
         firstProducer.close();
+
+        /*
+        The data produced by a producer is asynchronous. Therefore, two additional functions, i.e., flush() and close()
+        are required (as seen in the above snapshot). The flush() will force all the data to get produced and close()
+        stops the producer. If these functions are not executed, data will never be sent to the Kafka, and the consumer
+        will not be able to read it.
+         */
     }
 }
