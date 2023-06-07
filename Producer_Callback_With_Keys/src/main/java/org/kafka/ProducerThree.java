@@ -59,7 +59,7 @@ public class ProducerThree {
                         logger.error("Unable to produce the data, getting error: ",exception);
                     }
                 }
-            }).get();
+            }).get();  // sending synchronous data forcefully
         }
 
         firstProducer.flush(); // Common in both sending methods
