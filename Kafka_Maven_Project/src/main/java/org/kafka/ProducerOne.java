@@ -1,9 +1,9 @@
 package org.kafka;
 
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
 
@@ -84,6 +84,20 @@ public class ProducerOne {
         2) Non-retriable exception: This exception throws the error that the message will never be sent.
         */
 
+        firstProducer.send(producerRecord, new Callback() {
+            public void onCompletion(RecordMetadata recordMetadata, Exception exception) {
+
+                Logger logger = LoggerFactory.getLogger(ProducerOne.class);
+
+                if (exception == null){
+
+
+
+                }else{
+
+                }
+            }
+        });
 
         firstProducer.flush(); // Common in both sending methods
         firstProducer.close(); // Common in both sending methods
