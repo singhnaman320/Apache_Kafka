@@ -48,7 +48,7 @@ public class ProducerOne {
 
         // A ProducerRecord can be created as:
 
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","message","Creating");
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","message","Created successfully");
 
         /* Note: Create this topic manually */
 
