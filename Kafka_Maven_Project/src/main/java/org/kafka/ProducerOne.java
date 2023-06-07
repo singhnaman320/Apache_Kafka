@@ -48,8 +48,11 @@ public class ProducerOne {
 
         // A ProducerRecord can be created as:
 
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","message","Created successfully");
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","Created successfully");
 
+        // OR
+
+        //ProducerRecord<String, String> producerRecord = new ProducerRecord<>(topic:"TopicOne",key:"message",value:"Created successfully");
         /* Note: Create this topic manually */
 
         /*
@@ -60,6 +63,9 @@ public class ProducerOne {
         // []=-=-= Sending data =-=-=[]
 
         firstProducer.send(producerRecord);
+
+        // []=-=-= Sending data =-=-=[]
+
         firstProducer.flush();
         firstProducer.close();
 
