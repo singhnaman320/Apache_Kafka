@@ -64,6 +64,8 @@ public class ProducerOne {
 
         firstProducer.send(producerRecord);
 
+        //OR
+
         // []=-=-= Sending data with Kafka Producer Callbacks =-=-=
 
         /*
@@ -83,8 +85,8 @@ public class ProducerOne {
         */
 
 
-        firstProducer.flush();
-        firstProducer.close();
+        firstProducer.flush(); // Common in both sending methods
+        firstProducer.close(); // Common in both sending methods
 
         /*
         The data produced by a producer is asynchronous. Therefore, two additional functions, i.e., flush() and close()
