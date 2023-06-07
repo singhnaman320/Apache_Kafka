@@ -51,6 +51,24 @@ public class producerTwo {
         'Creating TopicOne' is the message. The user can choose accordingly.
         */
 
+        // []=-=-= Sending data with Kafka Producer Callbacks =-=-=[]
+
+        /*
+        In order to understand more deeply, i.e., whether the data was correctly produced, where it was produced, about
+        its offset and partition value, etc. we will use callback functions.
+
+        The callback function used by the producer is the onCompletion(). Basically, this method requires two arguments:
+
+        Metadata of the Record: Metadata of the record means fetching the information regarding the partition and its
+        offsets. If it is not null, an error will be thrown.
+
+        Exception: There are following exceptions which can be thrown while processing:
+
+        1) Retriable exception: This exception says that the message may be sent.
+
+        2) Non-retriable exception: This exception throws the error that the message will never be sent.
+        */
+
 
     }
 }
