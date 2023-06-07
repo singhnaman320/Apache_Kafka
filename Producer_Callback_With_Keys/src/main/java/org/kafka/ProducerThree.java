@@ -6,6 +6,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Properties;
+import java.util.concurrent.ExecutionException;
+
 /*
     []=-=-=-=- Producer with Keys =-=-=-=-[]
     Keys become useful when a user wants to send the message to the same partition. In order to send the data, the user
@@ -13,8 +15,9 @@ import java.util.Properties;
     send synchronous messages to the Kafka.
 */
 public class ProducerThree {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
 
+        final Logger logger = LoggerFactory.getLogger(ProducerThree.class);
         // []=-=-= Creating properties =-=-=[]
 
         String bootstrapServers = "localhost:9092";  // or localhost:9092
@@ -30,50 +33,34 @@ public class ProducerThree {
         for (int i=0 ; i<10 ; i++){
 
             String topic = "TopicOne";
+            String value = "Produced Data" + Integer.toString(i);
+            String key = "GivenKey" + Integer.toString(i);
 
-        }
+            ProducerRecord<String, String> producerRecord =
+                    new ProducerRecord<>(topic,key,value);  // []=-=-= Creating the Producer Record =-=-=[]
 
-        ProducerRecord<String, String> producerRecord =
-                new ProducerRecord<>("TopicOne","FirstKey","Data");  // []=-=-= Creating the Producer Record =-=-=[]
+            logger.info("key" + key);
 
+            // []=-=-= Sending data with Kafka Producer Callbacks =-=-=[]
 
-        // []=-=-= Sending data with Kafka Producer Callbacks =-=-=[]
+            firstProducer.send(producerRecord, new Callback() {
+                public void onCompletion(RecordMetadata recordMetadata, Exception exception) {
 
-        /*
-        In order to understand more deeply, i.e., whether the data was correctly produced, where it was produced, about
-        its offset and partition value, etc. we will use callback functions.
+                    if (exception == null){
 
-        The callback function used by the producer is the onCompletion(). Basically, this method requires two arguments:
+                        logger.info("Details are given as: \n" +
+                                "Topic: " + recordMetadata.topic() + "\n" +
+                                "Partition: " + recordMetadata.partition() + "\n" +
+                                "Offset: " + recordMetadata.offset() + "\n" +
+                                "Timestamp: " + recordMetadata.timestamp() +"\n");
 
-        Metadata of the Record: Metadata of the record means fetching the information regarding the partition and its
-        offsets. If it is not null, an error will be thrown.
+                    }else{
 
-        Exception: There are following exceptions which can be thrown while processing:
-
-        1) Retriable exception: This exception says that the message may be sent.
-
-        2) Non-retriable exception: This exception throws the error that the message will never be sent.
-        */
-
-        firstProducer.send(producerRecord, new Callback() {
-            public void onCompletion(RecordMetadata recordMetadata, Exception exception) {
-
-                Logger logger = LoggerFactory.getLogger(ProducerThree.class);
-
-                if (exception == null){
-
-                    logger.info("Details are given as: \n" +
-                            "Topic: " + recordMetadata.topic() + "\n" +
-                            "Partition: " + recordMetadata.partition() + "\n" +
-                            "Offset: " + recordMetadata.offset() + "\n" +
-                            "Timestamp: " + recordMetadata.timestamp() +"\n");
-
-                }else{
-
-                    logger.error("Unable to produce the data, getting error: ",exception);
+                        logger.error("Unable to produce the data, getting error: ",exception);
+                    }
                 }
-            }
-        });
+            }).get();
+        }
 
         firstProducer.flush(); // Common in both sending methods
         firstProducer.close(); // Common in both sending methods
