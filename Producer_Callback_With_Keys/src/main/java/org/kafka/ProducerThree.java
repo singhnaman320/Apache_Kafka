@@ -27,7 +27,11 @@ public class ProducerThree {
 
         KafkaProducer<String, String> firstProducer = new KafkaProducer<>(properties); // []=-=-= Creating Producer =-=-=[]
 
+        for (int i=0 ; i<10 ; i++){
 
+            String topic = "TopicOne";
+
+        }
 
         ProducerRecord<String, String> producerRecord =
                 new ProducerRecord<>("TopicOne","FirstKey","Data");  // []=-=-= Creating the Producer Record =-=-=[]
