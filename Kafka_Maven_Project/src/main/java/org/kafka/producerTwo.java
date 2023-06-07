@@ -31,7 +31,7 @@ public class producerTwo {
 
         // []=-=-= Creating the Producer Record =-=-=[]
 
-        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","Created successfully");
+        ProducerRecord<String, String> producerRecord = new ProducerRecord<>("TopicOne","new data created");
 
         // []=-=-= Sending data with Kafka Producer Callbacks =-=-=[]
 
