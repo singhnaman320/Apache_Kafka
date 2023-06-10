@@ -24,3 +24,8 @@
    () value.deserializer: A Deserializer class for value which implements the 'org.apache.kafka.common.serialization.
       Deserializer' interface.
 
+   () bootstrap.servers: It is a list of host/port pairs which is used to establish an initial connection with the Kafka
+      cluster. It does not contain a full set of servers that a client requires. Only the servers which are required for
+      bootstrapping are required.
+
+
