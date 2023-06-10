@@ -14,4 +14,10 @@
     The logger is implemented to write log messages during the program execution. The user needs to create a Logger
     object which will require to import 'org.slf4j class'.
 
-[]
+[] Creating Consumer Properties:
+
+    The required properties of a consumer, such as:
+
+   () key.deserializer: It is a Deserializer class for the key, which is used to implement the 'org.apache.kafka.common.
+      serialization.Deserializer' interface.
+
