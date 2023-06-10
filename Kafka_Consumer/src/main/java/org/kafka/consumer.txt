@@ -44,3 +44,10 @@
    () anything else: It throws an exception to the consumer.
 
    {} Note: In our code, we have used 'earliest' variable to reset the value to its earliest.
+
+[] Subscribing the consumer:
+
+    To read the message from a topic, we need to connect the consumer to the specified topic. A consumer can be
+    subscribed through various subscribe API's. Here, we have used Arrays.asList() because may be the user wants to
+    subscribe either to one or multiple topics. Therefore, Arrays.asList() allows to subscribe the consumer to multiple
+    topics.
