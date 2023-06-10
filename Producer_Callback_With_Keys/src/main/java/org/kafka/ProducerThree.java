@@ -33,7 +33,7 @@ public class ProducerThree {
         for (int i=0 ; i<10 ; i++){
 
             String topic = "TopicOne";
-            String value = "Produced Data" + Integer.toString(i);
+            String value = "Data" + Integer.toString(i);
             String key = "GivenKey" + Integer.toString(i);
 
             ProducerRecord<String, String> producerRecord =
