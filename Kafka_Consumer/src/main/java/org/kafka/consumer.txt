@@ -21,3 +21,6 @@
    () key.deserializer: It is a Deserializer class for the key, which is used to implement the 'org.apache.kafka.common.
       serialization.Deserializer' interface.
 
+   () value.deserializer: A Deserializer class for value which implements the 'org.apache.kafka.common.serialization.
+      Deserializer' interface.
+
