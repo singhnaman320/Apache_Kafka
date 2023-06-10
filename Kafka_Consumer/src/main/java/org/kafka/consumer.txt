@@ -32,4 +32,7 @@
       consumer uses either Kafka based offset management strategy or group management functionality via subscribing to a
       topic.
 
+   () auto.offset.reset: This property is required when no initial offset is present or if the current offset does not
+      exist anymore on the server. There are the following values used to reset the offset values:
+
 
