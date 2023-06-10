@@ -57,3 +57,11 @@
     The consumer reads data from Kafka through the polling method. The poll method returns the data fetched from the
     current partition's offset. The time duration is specified till which it waits for the data, else returns an empty
     ConsumerRecord to the consumer. Also, the logger will fetch the record key, partitions, record offset and its value.
+
+[] Reading data in Consumer Group:
+
+    The user can have more than one consumer reading data altogether. This can be done via a consumer group. In the
+    consumer group, one or more consumers will be able to read the data from Kafka. If the user wants to read the
+    messages from the beginning, either reset the group_id or change the group_id. This will reset the user's
+    application and will display the messages from the starting.
+
