@@ -35,4 +35,8 @@
    () auto.offset.reset: This property is required when no initial offset is present or if the current offset does not
       exist anymore on the server. There are the following values used to reset the offset values:
 
+   () earliest: This offset variable automatically reset the value to its earliest offset.
+
+   () latest: This offset variable reset the offset value to its latest offset.
+
 
