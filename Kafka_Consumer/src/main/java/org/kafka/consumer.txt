@@ -51,3 +51,9 @@
     subscribed through various subscribe API's. Here, we have used Arrays.asList() because may be the user wants to
     subscribe either to one or multiple topics. Therefore, Arrays.asList() allows to subscribe the consumer to multiple
     topics.
+
+[] Polling for new data:
+
+    The consumer reads data from Kafka through the polling method. The poll method returns the data fetched from the
+    current partition's offset. The time duration is specified till which it waits for the data, else returns an empty
+    ConsumerRecord to the consumer. Also, the logger will fetch the record key, partitions, record offset and its value.
