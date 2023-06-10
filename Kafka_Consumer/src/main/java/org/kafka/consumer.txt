@@ -39,4 +39,8 @@
 
    () latest: This offset variable reset the offset value to its latest offset.
 
+   () none: If no previous offset is found for the previous group, it throws an exception to the consumer.
 
+   () anything else: It throws an exception to the consumer.
+
+   {} Note: In our code, we have used 'earliest' variable to reset the value to its earliest.
