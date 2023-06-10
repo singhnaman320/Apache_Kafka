@@ -28,4 +28,8 @@
       cluster. It does not contain a full set of servers that a client requires. Only the servers which are required for
       bootstrapping are required.
 
+   () group.id: It is a unique string which identifies the consumer of a consumer group. This property is needed when a
+      consumer uses either Kafka based offset management strategy or group management functionality via subscribing to a
+      topic.
+
 
