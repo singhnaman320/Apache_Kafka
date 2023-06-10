@@ -16,6 +16,13 @@ package org.kafka;
 public class ConsumerOne {
     public static void main(String[] args) {
 
+        /*
+
+        []=-=-= Creating Logger =-=-=[]
+        The logger is implemented to write log messages during the program execution. The user needs to create a Logger
+        object which will require to import 'org.slf4j class'.
+
+         */
 
     }
 }
