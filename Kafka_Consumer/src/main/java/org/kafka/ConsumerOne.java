@@ -1,12 +1,15 @@
 package org.kafka;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.protocol.types.Field;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.time.Duration;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Properties;
 
 public class ConsumerOne {
@@ -41,6 +44,13 @@ public class ConsumerOne {
 
          */
 
+        consumer.subscribe(List.of(topic));
 
+        // []=-=-= Polling for new data: The consumer reads data from Kafka through the polling method. =-=-=[]
+
+        while (true){
+
+            ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(1000));
+        }
     }
 }
