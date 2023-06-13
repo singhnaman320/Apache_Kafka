@@ -57,6 +57,12 @@ public class ConsumerOne {
 
                 logger.info("Key: " + record.key() + ", Value: " + record.value());
                 logger.info("Partition: " + record.partition() + ", Offset: " + record.offset());
+
+                /* The poll method returns the data fetched from the current partition's offset. The time
+                duration is specified till which it waits for the data, else returns an empty ConsumerRecord
+                to the consumer. Also, the logger will fetch the record key, partitions, record offset and
+                its value.
+                 */
             }
         }
     }
