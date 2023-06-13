@@ -45,7 +45,7 @@ public class ConsumerOne {
 
          */
 
-        consumer.subscribe(List.of(topic));
+        consumer.subscribe(Arrays.asList(topic));
 
         // []=-=-= Polling for new data: The consumer reads data from Kafka through the polling method. =-=-=[]
 
