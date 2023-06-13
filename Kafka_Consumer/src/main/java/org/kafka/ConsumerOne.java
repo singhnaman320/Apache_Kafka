@@ -8,6 +8,10 @@ public class ConsumerOne {
 
         /* []=-=-= Creating Logger =-=-=[] */
 
-        Logger logger = LoggerFactory.getLogger(ConsumerOne.class);
+        Logger logger = LoggerFactory.getLogger(ConsumerOne.class.getName());
+
+        String bootstrapServers = "localhost:9092";
+        String groupId = "secApp";
+        String topic = "TopicOne";
     }
 }
